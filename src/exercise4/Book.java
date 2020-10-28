@@ -22,7 +22,10 @@ public class Book {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name == null || name.equals(""))
+            this.name = "No title supplied";
+        else
+            this.name = name;
     }
 
     public double getCost() {
@@ -30,7 +33,10 @@ public class Book {
     }
 
     public void setCost(double cost) {
-        this.cost = cost;
+        if(cost<0 || cost>50000)
+            this.cost = 0;
+        else
+            this.cost = cost;
     }
 
     public String getIsbn() {
@@ -38,6 +44,9 @@ public class Book {
     }
 
     public void setIsbn(String isbn) {
+        if (isbn == null || isbn.equals(""))
+            this.isbn = "No ISBN supplied";
+        else
         this.isbn = isbn;
     }
 
@@ -47,6 +56,9 @@ public class Book {
     }
 
     public void setPages(int pages) {
+        if(pages<0 || pages>4000)
+        this.pages = 0;
+    else
         this.pages = pages;
     }
 
